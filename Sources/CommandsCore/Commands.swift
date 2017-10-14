@@ -31,3 +31,12 @@ public extension Commands {
         case missingLaunchPath
     }
 }
+
+extension Commands.Error: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .missingLaunchPath:
+            return "The launch path is missing"
+        }
+    }
+}
