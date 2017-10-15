@@ -5,6 +5,9 @@ import PackageDescription
 
 let package = Package(
     name: "Commands",
+    products: [
+        .library(name: "Commands", targets: ["Commands"]),
+    ],
     dependencies: [],
     targets: [
         .target(
