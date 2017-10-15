@@ -7,6 +7,7 @@ let package = Package(
     name: "Commands",
     products: [
         .library(name: "Commands", targets: ["Commands"]),
+        .library(name: "CommandsCore", targets: ["CommandsCore"]),
     ],
     dependencies: [],
     targets: [
