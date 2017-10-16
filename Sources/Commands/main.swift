@@ -7,6 +7,6 @@ do {
 } catch let e as Commands.Error {
     print(e)
 } catch {
-    print("oh no, an unknown error was thrown 😱")
+    print("oh no, an unknown error was thrown 😱: \(error.localizedDescription)")
 }
 
