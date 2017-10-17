@@ -12,7 +12,7 @@ class ConsoleOutputStream: OutputStream {
     override func write(_ buffer: UnsafePointer<UInt8>, maxLength len: Int) -> Int {
         let data = Data.init(bytes: buffer, count: len)
         let text = String(data: data, encoding: String.Encoding.utf8)
-        print(String(describing: text))
+        print("\(text ?? "")")
         return len
     }
 
