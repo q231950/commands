@@ -10,7 +10,7 @@ import Foundation
 class CommandExecutor {
 
     func executeCommand(at launchPath: String, arguments: [String]) {
-        let consoleStream = ConsoleOutputStream()
+        let consoleStream = StandardOutOutputStream()
         executeCommand(at: launchPath, arguments: arguments, outputStream: consoleStream)
     }
 
