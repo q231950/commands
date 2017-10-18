@@ -7,16 +7,16 @@
 
 import Foundation
 
-class StandardOutOutputStream: OutputStream {
+public class StandardOutOutputStream: OutputStream {
 
-    override func write(_ buffer: UnsafePointer<UInt8>, maxLength len: Int) -> Int {
+    public override func write(_ buffer: UnsafePointer<UInt8>, maxLength len: Int) -> Int {
         let data = Data.init(bytes: buffer, count: len)
         let text = String(data: data, encoding: String.Encoding.utf8)
         print("\(text ?? "")")
         return len
     }
 
-    override func close() {
+    public override func close() {
         print("Closing Console Stream")
     }
 }
