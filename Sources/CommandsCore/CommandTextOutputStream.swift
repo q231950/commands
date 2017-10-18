@@ -7,11 +7,11 @@
 
 import Foundation
 
-class CommandTextOutputStream: OutputStream {
+public class CommandTextOutputStream: OutputStream {
 
-    var textHandler: ((String) -> Void)?
+    public var textHandler: ((String) -> Void)?
 
-    override func write(_ buffer: UnsafePointer<UInt8>, maxLength len: Int) -> Int {
+    public override func write(_ buffer: UnsafePointer<UInt8>, maxLength len: Int) -> Int {
 
         let data = Data.init(bytes: buffer, count: len)
         let text = String(data: data, encoding: String.Encoding.utf8)
@@ -22,7 +22,7 @@ class CommandTextOutputStream: OutputStream {
         return len
     }
 
-    override func close() {
+    public override func close() {
     }
 }
 
