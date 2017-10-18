@@ -7,14 +7,17 @@
 
 import Foundation
 
-class CommandExecutor {
+public class CommandExecutor {
 
-    func executeCommand(at launchPath: String, arguments: [String]) {
+    public init() {
+    }
+
+    public func executeCommand(at launchPath: String, arguments: [String]) {
         let consoleStream = StandardOutOutputStream()
         executeCommand(at: launchPath, arguments: arguments, outputStream: consoleStream)
     }
 
-    func executeCommand(at launchPath: String, arguments: [String], outputStream: OutputStream) {
+    public func executeCommand(at launchPath: String, arguments: [String], outputStream: OutputStream) {
         let process = Process()
         process.launchPath = launchPath
         process.arguments = arguments
