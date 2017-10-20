@@ -12,7 +12,7 @@ public class CommandExecutor {
     public init() {
     }
 
-    public func executeCommand(at launchPath: String, arguments: [String]) {
+    public func executeCommand(at launchPath: String, arguments: [String] = []) {
         let consoleStream = StandardOutOutputStream()
         executeCommand(at: launchPath, arguments: arguments, outputStream: consoleStream)
     }
