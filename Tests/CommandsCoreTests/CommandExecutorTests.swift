@@ -6,13 +6,23 @@
 //
 
 import XCTest
-import CommandsCore
+@testable import CommandsCore
 
 class CommandExecutorTests: XCTestCase {
 
     func testCommandExecutorExecutes() {
         let commandExecutor = CommandExecutor(launchPath: "/bin/echo", arguments: ["hello world"])
         XCTAssertNoThrow(commandExecutor.executeCommand())
+    }
+
+    func testCommandExecutorLaunchpath() {
+        let commandExecutor = CommandExecutor(launchPath: "/bin/echo", arguments: [])
+        XCTAssertEqual(commandExecutor.launchPath, "/bin/echo")
+    }
+
+    func testCommandExecutorArguments() {
+        let commandExecutor = CommandExecutor(launchPath: "", arguments: ["hello world"])
+        XCTAssertEqual(commandExecutor.arguments, ["hello world"])
     }
 }
 
