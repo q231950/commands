@@ -11,8 +11,8 @@ import CommandsCore
 class CommandExecutorTests: XCTestCase {
 
     func testCommandExecutorExecutes() {
-        let commandExecutor = CommandExecutor()
-        XCTAssertNoThrow(commandExecutor.executeCommand(at: "/bin/echo", arguments: ["hello world"]))
+        let commandExecutor = CommandExecutor(launchPath: "/bin/echo", arguments: ["hello world"])
+        XCTAssertNoThrow(commandExecutor.executeCommand())
     }
 }
 

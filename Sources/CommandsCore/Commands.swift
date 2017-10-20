@@ -12,10 +12,9 @@ public final class Commands {
             throw Error.missingLaunchPath
         }
 
-        let commandExecutor = CommandExecutor()
         let launchPath = arguments[1]
-
-        commandExecutor.executeCommand(at: launchPath, arguments: forwardArguments())
+        let commandExecutor = CommandExecutor(launchPath: launchPath, arguments: forwardArguments())
+        commandExecutor.executeCommand()
     }
 
     internal func forwardArguments() -> [String] {
