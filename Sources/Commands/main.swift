@@ -1,4 +1,5 @@
 import CommandsCore
+import Foundation
 
 let commands = Commands()
 
