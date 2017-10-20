@@ -10,12 +10,10 @@ import Foundation
 extension String {
     func makeScript(for type: AnyObject.Type) -> String? {
         let bundle = Bundle(for: type)
-        if let url = URL(string: bundle.resourcePath! + "/script.sh") {
-            let path = url.absoluteString
-            FileManager().createFile(atPath: path, contents: data(using: String.Encoding.utf8), attributes: nil)
-            return path
-        }
+        guard let resourcePath = bundle.resourcePath, let url = URL(string: "\(resourcePath)/script.sh") else { return nil }
 
-        return nil
+        let path = url.absoluteString
+        FileManager().createFile(atPath: path, contents: data(using: .utf8), attributes: nil)
+        return path
     }
 }
