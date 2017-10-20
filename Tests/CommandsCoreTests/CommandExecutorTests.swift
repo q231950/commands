@@ -12,7 +12,7 @@ class CommandExecutorTests: XCTestCase {
 
     func testCommandExecutorExecutes() {
         let commandExecutor = CommandExecutor(launchPath: "/bin/echo", arguments: ["hello world"])
-        XCTAssertNoThrow(commandExecutor.executeCommand())
+        XCTAssertNoThrow(commandExecutor.execute())
     }
 
     func testCommandExecutorLaunchpath() {

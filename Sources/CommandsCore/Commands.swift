@@ -14,7 +14,7 @@ public final class Commands {
 
         let launchPath = arguments[1]
         let commandExecutor = CommandExecutor(launchPath: launchPath, arguments: forwardArguments())
-        commandExecutor.executeCommand()
+        commandExecutor.execute()
     }
 
     internal func forwardArguments() -> [String] {

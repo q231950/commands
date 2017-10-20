@@ -19,7 +19,7 @@ public class CommandExecutor {
         self.outputStream = outputStream
     }
 
-    public func executeCommand() {
+    public func execute() {
         let process = Process()
         process.launchPath = launchPath
         process.arguments = arguments

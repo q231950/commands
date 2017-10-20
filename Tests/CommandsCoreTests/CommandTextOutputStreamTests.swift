@@ -16,7 +16,7 @@ class CommandTextOutputStreamTests: XCTestCase {
         }
         if let scriptPath = "echo 'resillient koala' && exit".makeScript(for: type(of: self)) {
             let commandExecutor = CommandExecutor(launchPath: "/bin/sh", arguments: [scriptPath], outputStream: outputStream)
-            commandExecutor.executeCommand()
+            commandExecutor.execute()
         } else {
             XCTFail()
         }
