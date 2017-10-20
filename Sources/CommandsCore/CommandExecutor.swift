@@ -9,9 +9,9 @@ import Foundation
 
 public class CommandExecutor {
 
-    internal let launchPath: String
-    internal let arguments: [String]
-    internal let outputStream: OutputStream
+    let launchPath: String
+    let arguments: [String]
+    let outputStream: OutputStream
 
     public init(launchPath: String, arguments: [String], outputStream: OutputStream = StandardOutOutputStream()) {
         self.launchPath = launchPath
