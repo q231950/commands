@@ -11,7 +11,7 @@ public class StandardOutOutputStream: OutputStream {
 
     public override func write(_ buffer: UnsafePointer<UInt8>, maxLength len: Int) -> Int {
         let data = Data.init(bytes: buffer, count: len)
-        let text = String(data: data, encoding: String.Encoding.utf8)
+        let text = String(data: data, encoding: .utf8)
         print("\(text ?? "")")
         return len
     }
