@@ -9,22 +9,29 @@ import Foundation
 
 public class CommandExecutor {
     
-    let outputPipe = Pipe()
+    private let outputStream: OutputStream
     private let inputPipe = Pipe()
     private let launchPath: String
     private let arguments: [String]
 
-    public init(launchPath: String, arguments: [String]) {
+    public init(launchPath: String, arguments: [String], outputStream: OutputStream = StandardOutOutputStream()) {
         self.launchPath = launchPath
         self.arguments = arguments
+        self.outputStream = outputStream
     }
-    
+
     public func execute() {
         let process = Process()
         process.launchPath = launchPath
         process.arguments = arguments
-        
+
+        let outputPipe = Pipe()
         process.standardOutput = outputPipe
+        outputPipe.fileHandleForReading.readabilityHandler = { [weak self] handle in
+            let data = handle.availableData
+            self?.outputStream.write([UInt8](data), maxLength: data.count)
+        }
+
         process.standardInput = inputPipe
 
         process.launch()

@@ -13,12 +13,9 @@ public final class Commands {
         }
 
         let launchPath = arguments[1]
-        let commandExecutor = CommandExecutor(launchPath: launchPath, arguments: (forwardArguments()))
-
-        commandExecutor.outputPipe.fileHandleForReading.readabilityHandler = { handle in
-            let data = handle.availableData
-            print("\(String(data: data, encoding: .utf8)!)")
-        }
+        let commandExecutor = CommandExecutor(launchPath: launchPath,
+                                              arguments: forwardArguments(),
+                                              outputStream: StandardOutOutputStream())
 
         DispatchQueue.global(qos: .background).async {
             commandExecutor.execute()
