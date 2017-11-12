@@ -25,7 +25,10 @@ public class CommandExecutor {
         process.launchPath = launchPath
         process.arguments = arguments
 
-        process.standardOutput = outputStreamWritingPipe()
+        let pipe = outputStreamWritingPipe()
+        process.standardOutput = pipe
+        process.standardError = pipe
+
         process.standardInput = inputPipe
 
         process.launch()
