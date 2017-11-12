@@ -16,7 +16,7 @@ class CommandTextOutputStreamTests: XCTestCase {
             XCTAssertEqual(text, "resillient koala\n")
             expectation.fulfill()
         }
-        if let scriptPath = "echo 'resillient koala' && exit".makeScript(for: type(of: self)) {
+        if let scriptPath = "echo 'resillient koala' && exit".makeScript(named: "TextOutputStream") {
             let commandExecutor = CommandExecutor(launchPath: "/bin/sh", arguments: [scriptPath], outputStream: outputStream)
             commandExecutor.execute()
             wait(for: [expectation], timeout: 0.1)
