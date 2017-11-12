@@ -10,13 +10,16 @@ import XCTest
 
 class CommandTextOutputStreamTests: XCTestCase {
     func testTextOutputStream() {
+        let expectation = self.expectation(description: "script done")
         let outputStream = CommandTextOutputStream()
         outputStream.textHandler = { text in
             XCTAssertEqual(text, "resillient koala\n")
+            expectation.fulfill()
         }
         if let scriptPath = "echo 'resillient koala' && exit".makeScript(for: type(of: self)) {
             let commandExecutor = CommandExecutor(launchPath: "/bin/sh", arguments: [scriptPath], outputStream: outputStream)
             commandExecutor.execute()
+            wait(for: [expectation], timeout: 0.1)
         } else {
             XCTFail()
         }

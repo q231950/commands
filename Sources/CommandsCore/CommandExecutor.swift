@@ -11,8 +11,8 @@ public class CommandExecutor {
     
     private let outputStream: OutputStream
     private let inputPipe = Pipe()
-    private let launchPath: String
-    private let arguments: [String]
+    let launchPath: String
+    let arguments: [String]
 
     public init(launchPath: String, arguments: [String], outputStream: OutputStream = StandardOutOutputStream()) {
         self.launchPath = launchPath
@@ -29,7 +29,10 @@ public class CommandExecutor {
         process.standardOutput = outputPipe
         outputPipe.fileHandleForReading.readabilityHandler = { [weak self] handle in
             let data = handle.availableData
-            self?.outputStream.write([UInt8](data), maxLength: data.count)
+            if data.count > 0 {
+                self?.outputStream.write([UInt8](data), maxLength: data.count)
+            }
+
         }
 
         process.standardInput = inputPipe
