@@ -25,20 +25,23 @@ public class CommandExecutor {
         process.launchPath = launchPath
         process.arguments = arguments
 
+        process.standardOutput = outputStreamWritingPipe()
+        process.standardInput = inputPipe
+
+        process.launch()
+        process.waitUntilExit()
+    }
+
+    private func outputStreamWritingPipe() -> Pipe {
         let outputPipe = Pipe()
-        process.standardOutput = outputPipe
         outputPipe.fileHandleForReading.readabilityHandler = { [weak self] handle in
             let data = handle.availableData
             if data.count > 0 {
                 self?.outputStream.write([UInt8](data), maxLength: data.count)
             }
-
         }
 
-        process.standardInput = inputPipe
-
-        process.launch()
-        process.waitUntilExit()
+        return outputPipe
     }
     
     public func write(input: String) {
