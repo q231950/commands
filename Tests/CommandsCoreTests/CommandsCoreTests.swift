@@ -36,7 +36,7 @@ class CommandsCoreTests: XCTestCase {
             echo "hello world"
             echo "hello second world"
             exit
-            """.makeScript(for: type(of: self)) {
+            """.makeScript(named: "ExecutesScript") {
             let arguments = ["Commands", "/bin/sh", path]
             let commands = Commands(arguments: arguments)
             XCTAssertNoThrow(try commands.run())

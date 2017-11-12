@@ -8,9 +8,9 @@
 import Foundation
 
 extension String {
-    func makeScript(for type: AnyObject.Type) -> String? {
-        let bundle = Bundle(for: type)
-        guard let resourcePath = bundle.resourcePath, let url = URL(string: "\(resourcePath)/script.sh") else { return nil }
+    func makeScript(named name:String) -> String? {
+        let temporaryDirectoryPath = NSTemporaryDirectory()
+        guard let url = URL(string: "\(temporaryDirectoryPath)/\(name).sh") else { return nil }
 
         let path = url.absoluteString
         FileManager().createFile(atPath: path, contents: data(using: .utf8), attributes: nil)
