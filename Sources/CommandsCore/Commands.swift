@@ -13,8 +13,18 @@ public final class Commands {
         }
 
         let launchPath = arguments[1]
-        let commandExecutor = CommandExecutor(launchPath: launchPath, arguments: forwardArguments())
-        commandExecutor.execute()
+        let commandExecutor = CommandExecutor(launchPath: launchPath,
+                                              arguments: forwardArguments(),
+                                              outputStream: StandardOutOutputStream())
+
+        DispatchQueue.global(qos: .background).async {
+            commandExecutor.execute()
+        }
+
+
+        while let x = readLine() {
+            commandExecutor.write(input: x)
+        }
     }
 
     internal func forwardArguments() -> [String] {
