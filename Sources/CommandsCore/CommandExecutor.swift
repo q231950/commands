@@ -13,6 +13,7 @@ public class CommandExecutor {
     private let inputPipe = Pipe()
     let launchPath: String
     let arguments: [String]
+    let process = Process()
 
     public init(launchPath: String, arguments: [String], outputStream: OutputStream = StandardOutOutputStream()) {
         self.launchPath = launchPath
@@ -21,7 +22,6 @@ public class CommandExecutor {
     }
 
     public func execute() {
-        let process = Process()
         process.launchPath = launchPath
         process.arguments = arguments
 
@@ -51,5 +51,9 @@ public class CommandExecutor {
         if let data = "\(input)\n".data(using: .utf8) {
             inputPipe.fileHandleForWriting.write(data)
         }
+    }
+    
+    public func terminate() {
+        process.terminate()
     }
 }
