@@ -21,5 +21,23 @@ class CommandExecutorTests: XCTestCase {
         let command = Command(launchPath: "/bin/echo")
         XCTAssertNoThrow(commandExecutor.execute(command))
     }
+
+    func testOutput() {
+        let expectation = self.expectation(description: "script done")
+
+        if let scriptPath = "echo 'resillient koala' && exit".makeScript(named: "OutputTestScript") {
+            let commandExecutor = CommandExecutor()
+            commandExecutor.outputHandler = { text in
+                XCTAssertEqual(text, "resillient koala\n")
+                expectation.fulfill()
+            }
+            let command = Command(launchPath: "/bin/sh", arguments: [scriptPath])
+            commandExecutor.execute(command)
+        } else {
+            XCTFail()
+        }
+
+        wait(for: [expectation], timeout: 0.1)
+    }
 }
 

@@ -8,14 +8,13 @@
 import Foundation
 
 public class CommandExecutor {
-    
-    private let outputStream: OutputStream
-    private let inputPipe = Pipe()
-    let process = Process()
 
-    public init(outputStream: OutputStream = StandardOutOutputStream()) {
-        self.outputStream = outputStream
-    }
+    public
+    var outputHandler: ((String) -> ())?
+    
+    private
+    let inputPipe = Pipe()
+    let process = Process()
 
     public func execute(_ command: Command) {
         process.launchPath = command.launchPath
@@ -35,8 +34,8 @@ public class CommandExecutor {
         let outputPipe = Pipe()
         outputPipe.fileHandleForReading.readabilityHandler = { [weak self] handle in
             let data = handle.availableData
-            if data.count > 0 {
-                self?.outputStream.write([UInt8](data), maxLength: data.count)
+            if data.count > 0, let output = String(data: data, encoding: .utf8) {
+                self?.outputHandler?(output)
             }
         }
 
