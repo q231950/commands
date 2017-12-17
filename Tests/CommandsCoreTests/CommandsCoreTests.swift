@@ -30,6 +30,7 @@ class CommandsCoreTests: XCTestCase {
     }
 
     func testExecutesScript() {
+        XCTFail()
         let scriptExpectation = expectation(description: "wait to finish script")
         if let path =
             """
