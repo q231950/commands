@@ -11,15 +11,13 @@ public class CommandExecutor {
     
     private let outputStream: OutputStream
     private let inputPipe = Pipe()
-    let command: Command
     let process = Process()
 
-    public init(command: Command, outputStream: OutputStream = StandardOutOutputStream()) {
-        self.command = command
+    public init(outputStream: OutputStream = StandardOutOutputStream()) {
         self.outputStream = outputStream
     }
 
-    public func execute() {
+    public func execute(_ command: Command) {
         process.launchPath = command.launchPath
         process.arguments = command.arguments
 

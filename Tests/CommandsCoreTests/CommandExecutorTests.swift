@@ -10,16 +10,16 @@ import XCTest
 
 class CommandExecutorTests: XCTestCase {
 
+    let commandExecutor = CommandExecutor()
+
     func testCommandExecutorExecutesCommandWithArguments() {
         let command = Command(launchPath: "/bin/echo", arguments: ["hello world"])
-        let commandExecutor = CommandExecutor(command: command)
-        XCTAssertNoThrow(commandExecutor.execute())
+        XCTAssertNoThrow(commandExecutor.execute(command))
     }
 
     func testCommandExecutorExecutesCommand() {
         let command = Command(launchPath: "/bin/echo")
-        let commandExecutor = CommandExecutor(command: command)
-        XCTAssertNoThrow(commandExecutor.execute())
+        XCTAssertNoThrow(commandExecutor.execute(command))
     }
 }
 

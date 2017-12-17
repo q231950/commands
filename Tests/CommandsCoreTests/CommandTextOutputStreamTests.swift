@@ -17,9 +17,9 @@ class CommandTextOutputStreamTests: XCTestCase {
             expectation.fulfill()
         }
         if let scriptPath = "echo 'resillient koala' && exit".makeScript(named: "TextOutputStream") {
+            let commandExecutor = CommandExecutor(outputStream: outputStream)
             let command = Command(launchPath: "/bin/sh", arguments: [scriptPath])
-            let commandExecutor = CommandExecutor(command: command, outputStream: outputStream)
-            commandExecutor.execute()
+            commandExecutor.execute(command)
             wait(for: [expectation], timeout: 0.1)
         } else {
             XCTFail()

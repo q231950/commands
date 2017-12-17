@@ -14,10 +14,10 @@ public final class Commands {
 
         let launchPath = arguments[1]
         let command = Command(launchPath: launchPath, arguments: forwardArguments())
-        let commandExecutor = CommandExecutor(command: command, outputStream: StandardOutOutputStream())
+        let commandExecutor = CommandExecutor(outputStream: StandardOutOutputStream())
 
         DispatchQueue.global(qos: .background).async {
-            commandExecutor.execute()
+            commandExecutor.execute(command)
         }
 
         while let x = readLine() {
