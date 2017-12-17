@@ -39,7 +39,7 @@ playground.xcworkspace
 Packages/
 Package.pins
 .build/
-Commands.xcodeproj
+#Commands.xcodeproj
 
 # CocoaPods
 #
