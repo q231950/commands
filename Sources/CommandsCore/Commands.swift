@@ -13,14 +13,12 @@ public final class Commands {
         }
 
         let launchPath = arguments[1]
-        let commandExecutor = CommandExecutor(launchPath: launchPath,
-                                              arguments: forwardArguments(),
-                                              outputStream: StandardOutOutputStream())
+        let command = Command(launchPath: launchPath, arguments: forwardArguments())
+        let commandExecutor = CommandExecutor(command: command, outputStream: StandardOutOutputStream())
 
         DispatchQueue.global(qos: .background).async {
             commandExecutor.execute()
         }
-
 
         while let x = readLine() {
             commandExecutor.write(input: x)
