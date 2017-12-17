@@ -52,6 +52,11 @@
                BlueprintName = "CommandsCoreTests"
                ReferencedContainer = "container:Commands.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "CommandsCoreTests/testExecutesScript()">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <AdditionalOptions>
