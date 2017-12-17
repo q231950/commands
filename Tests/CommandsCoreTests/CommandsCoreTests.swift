@@ -29,7 +29,7 @@ class CommandsCoreTests: XCTestCase {
         XCTAssertEqual(commands.forwardArguments(), ["c"])
     }
 
-    func testExecutesScript() {
+    func testAExecutesScript() {
         XCTFail()
         let scriptExpectation = expectation(description: "wait to finish script")
         if let path =
