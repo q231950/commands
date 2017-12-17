@@ -30,6 +30,7 @@ class CommandsCoreTests: XCTestCase {
     }
 
     func testExecutesScript() {
+        let scriptExpectation = expectation(description: "wait to finish script")
         if let path =
             """
             #!/bin/sh
@@ -40,8 +41,11 @@ class CommandsCoreTests: XCTestCase {
             let arguments = ["Commands", "/bin/sh", path]
             let commands = Commands(arguments: arguments)
             XCTAssertNoThrow(try commands.run())
+            scriptExpectation.fulfill()
         } else {
             XCTFail()
         }
+
+        wait(for: [scriptExpectation], timeout: 0.1)
     }
 }
