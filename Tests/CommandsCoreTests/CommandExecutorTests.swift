@@ -27,7 +27,7 @@ class CommandExecutorTests: XCTestCase {
         let outputExpectation = expectation(description: "output expectation")
         let command = Command(launchPath: "/usr/bin/whoami")
         commandExecutor.outputHandler = { text in
-            XCTAssertTrue(text.characters.count >= 3, "whoami should output a name with at least 3 characters")
+            XCTAssertTrue(text.count >= 3, "whoami should output a name with at least 3 characters")
             outputExpectation.fulfill()
         }
         commandExecutor.execute(command)
