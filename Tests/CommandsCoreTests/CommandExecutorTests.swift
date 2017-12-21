@@ -18,16 +18,18 @@ class CommandExecutorTests: XCTestCase {
         commandExecutor.outputHandler = { text in
             XCTAssertEqual(text, "hello world")
         }
+        commandExecutor.execute(command)
         wait(for: [outputExpectation], timeout: 0.1)
     }
 
     func testCommandExecutorExecutesCommand() {
         let outputExpectation = expectation(description: "output expectation")
-        let command = Command(launchPath: "/bin/whoami")
+        let command = Command(launchPath: "/usr/bin/whoami")
         commandExecutor.outputHandler = { text in
             XCTAssertTrue(text.characters.count >= 3, "whoami should output a name with at least 3 characters")
             outputExpectation.fulfill()
         }
+        commandExecutor.execute(command)
         wait(for: [outputExpectation], timeout: 0.1)
     }
 
