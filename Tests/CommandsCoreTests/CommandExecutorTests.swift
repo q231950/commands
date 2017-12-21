@@ -13,13 +13,22 @@ class CommandExecutorTests: XCTestCase {
     let commandExecutor = CommandExecutor()
 
     func testCommandExecutorExecutesCommandWithArguments() {
+        let outputExpectation = expectation(description: "output expectation")
         let command = Command(launchPath: "/bin/echo", arguments: ["hello world"])
-        XCTAssertNoThrow(commandExecutor.execute(command))
+        commandExecutor.outputHandler = { text in
+            XCTAssertEqual(text, "hello world")
+        }
+        wait(for: [outputExpectation], timeout: 0.1)
     }
 
     func testCommandExecutorExecutesCommand() {
-        let command = Command(launchPath: "/bin/echo")
-        XCTAssertNoThrow(commandExecutor.execute(command))
+        let outputExpectation = expectation(description: "output expectation")
+        let command = Command(launchPath: "/bin/whoami")
+        commandExecutor.outputHandler = { text in
+            XCTAssertTrue(text.characters.count >= 3, "whoami should output a name with at least 3 characters")
+            outputExpectation.fulfill()
+        }
+        wait(for: [outputExpectation], timeout: 0.1)
     }
 
     func testOutput() {
