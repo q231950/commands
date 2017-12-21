@@ -16,7 +16,8 @@ class CommandExecutorTests: XCTestCase {
         let outputExpectation = expectation(description: "output expectation")
         let command = Command(launchPath: "/bin/echo", arguments: ["hello world"])
         commandExecutor.outputHandler = { text in
-            XCTAssertEqual(text, "hello world")
+            XCTAssertEqual(text, "hello world\n")
+            outputExpectation.fulfill()
         }
         commandExecutor.execute(command)
         wait(for: [outputExpectation], timeout: 0.1)
