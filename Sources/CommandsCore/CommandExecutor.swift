@@ -16,6 +16,10 @@ public class CommandExecutor {
     let inputPipe = Pipe()
     let process = Process()
 
+    public init() {
+        // 
+    }
+
     public func execute(_ command: Command) {
         process.launchPath = command.launchPath
         process.arguments = command.arguments
