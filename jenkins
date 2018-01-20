@@ -21,6 +21,6 @@ node {
 
         junit 'derived_data/Logs/Test/*.xml'
 
-        sh 'git clean -dfx'
+        sh 'git clean -dfx derived_data/Logs'
     }
 }
