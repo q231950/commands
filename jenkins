@@ -17,6 +17,8 @@ node {
     stage("Collect results") {
         sh 'pwd'
         sh '/usr/local/bin/bundler install --path vendor/bundle'
-        sh '/usr/local/bin/bundler exec trainer --path ./derived_data/Logs/Test/'
+        sh '/usr/local/bin/bundler exec trainer --path ./derived_data/Logs/Test'
+
+        junit './derived_data/Logs/Test/**/*.xml'
     }
 }
