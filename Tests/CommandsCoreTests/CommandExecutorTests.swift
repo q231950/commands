@@ -18,7 +18,7 @@ class CommandExecutorTests: XCTestCase {
         commandExecutor.outputHandler = { text in
             XCTAssertEqual(text, "hello world\n")
         }
-        commandExecutor.exitHandler = { _ in
+        commandExecutor.terminationHandler = { _ in
             outputExpectation.fulfill()
         }
         commandExecutor.execute(command)
@@ -31,7 +31,7 @@ class CommandExecutorTests: XCTestCase {
         commandExecutor.outputHandler = { text in
             XCTAssertTrue(text.count >= 3, "whoami should output a name with at least 3 characters")
         }
-        commandExecutor.exitHandler = { _ in
+        commandExecutor.terminationHandler = { _ in
             outputExpectation.fulfill()
         }
         commandExecutor.execute(command)
@@ -46,7 +46,7 @@ class CommandExecutorTests: XCTestCase {
             commandExecutor.outputHandler = { text in
                 XCTAssertEqual(text, "resillient koala\n")
             }
-            commandExecutor.exitHandler = { _ in
+            commandExecutor.terminationHandler = { _ in
                 expectation.fulfill()
             }
             let command = Command(launchPath: "/bin/sh", arguments: [scriptPath])

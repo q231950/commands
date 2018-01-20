@@ -15,7 +15,7 @@ public final class Commands {
         let launchPath = arguments[1]
         let command = Command(launchPath: launchPath, arguments: forwardArguments())
         let commandExecutor = CommandExecutor()
-        commandExecutor.exitHandler = { _ in
+        commandExecutor.terminationHandler = { _ in
             return
         }
         commandExecutor.outputHandler = { text in
