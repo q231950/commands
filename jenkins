@@ -5,9 +5,17 @@ node {
 
     stage("Build") {
         sh 'swift build'
+        sh 'swift package generate-xcodeproj'
+
+        sh "xcodebuild build-for-testing -scheme 'Commands-Package' -configuration 'Debug' -derivedDataPath './derived_data'"
     }
 
     stage("Test") {
-        sh 'swift test'
+        sh "xcodebuild test-without-building -scheme 'Commands-Package' -configuration 'Debug' -derivedDataPath './derived_data'"
+    }
+
+    stage("Collect results") {
+        sh 'pwd'
+        sh 'bundle install'
     }
 }
