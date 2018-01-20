@@ -15,8 +15,7 @@ public final class Commands {
         let launchPath = arguments[1]
         let command = Command(launchPath: launchPath, arguments: forwardArguments())
         let commandExecutor = CommandExecutor()
-        commandExecutor.exitHandler = { statusCode in
-            print("returning from run with exit \(statusCode)")
+        commandExecutor.exitHandler = { _ in
             return
         }
         commandExecutor.outputHandler = { text in
@@ -28,7 +27,7 @@ public final class Commands {
                 commandExecutor.write(input: x)
             }
         }
-        
+
         commandExecutor.execute(command)
     }
 

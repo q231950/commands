@@ -27,13 +27,7 @@ public class CommandExecutor {
 
         process.standardInput = inputPipe
         process.terminationHandler = { process in
-            let status = process.terminationStatus
-            self.exitHandler?(status)
-            if status == 0 {
-                print("Task succeeded.")
-            } else {
-                print("Task failed.")
-            }
+            self.exitHandler?(process.terminationStatus)
         }
 
         process.launch()
