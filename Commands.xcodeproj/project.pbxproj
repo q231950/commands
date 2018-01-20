@@ -9,11 +9,12 @@
 /* Begin PBXAggregateTarget section */
 		"Commands::CommandsPackageTests::ProductTarget" /* CommandsPackageTests */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = OBJ_65 /* Build configuration list for PBXAggregateTarget "CommandsPackageTests" */;
+			buildConfigurationList = OBJ_74 /* Build configuration list for PBXAggregateTarget "CommandsPackageTests" */;
 			buildPhases = (
 			);
 			dependencies = (
-				OBJ_68 /* PBXTargetDependency */,
+				OBJ_77 /* PBXTargetDependency */,
+				OBJ_78 /* PBXTargetDependency */,
 			);
 			name = CommandsPackageTests;
 			productName = CommandsPackageTests;
@@ -21,42 +22,63 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		OBJ_31 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
-		OBJ_37 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* main.swift */; };
-		OBJ_39 /* CommandsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Commands::CommandsCore::Product" /* CommandsCore.framework */; };
-		OBJ_47 /* CommandExecutorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* CommandExecutorTests.swift */; };
-		OBJ_48 /* CommandTextOutputStreamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* CommandTextOutputStreamTests.swift */; };
-		OBJ_49 /* CommandsCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* CommandsCoreTests.swift */; };
-		OBJ_50 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* TestHelper.swift */; };
-		OBJ_52 /* CommandsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Commands::CommandsCore::Product" /* CommandsCore.framework */; };
-		OBJ_58 /* CommandExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* CommandExecutor.swift */; };
-		OBJ_59 /* CommandTextOutputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* CommandTextOutputStream.swift */; };
-		OBJ_60 /* Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Commands.swift */; };
-		OBJ_61 /* StandardInputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* StandardInputStream.swift */; };
-		OBJ_62 /* StandardOutOutputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* StandardOutOutputStream.swift */; };
+		OBJ_32 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_38 /* CommandsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* CommandsTests.swift */; };
+		OBJ_39 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* TestHelper.swift */; };
+		OBJ_41 /* CommandsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Commands::CommandsCore::Product" /* CommandsCore.framework */; };
+		OBJ_51 /* CommandExecutorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* CommandExecutorTests.swift */; };
+		OBJ_52 /* CommandsCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* CommandsCoreTests.swift */; };
+		OBJ_53 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* TestHelper.swift */; };
+		OBJ_55 /* CommandsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Commands::CommandsCore::Product" /* CommandsCore.framework */; };
+		OBJ_61 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* main.swift */; };
+		OBJ_63 /* CommandsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Commands::CommandsCore::Product" /* CommandsCore.framework */; };
+		OBJ_69 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Command.swift */; };
+		OBJ_70 /* CommandExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* CommandExecutor.swift */; };
+		OBJ_71 /* Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Commands.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3B6BCE371FE680260059C0BE /* PBXContainerItemProxy */ = {
+		3BF13429201339F20000759D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Commands::CommandsCore";
 			remoteInfo = CommandsCore;
 		};
-		3B6BCE381FE680260059C0BE /* PBXContainerItemProxy */ = {
+		3BF1342A201339F20000759D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Commands::CommandsCore";
 			remoteInfo = CommandsCore;
 		};
-		3B6BCE391FE680260059C0BE /* PBXContainerItemProxy */ = {
+		3BF1342B201339F20000759D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Commands::Commands";
+			remoteInfo = Commands;
+		};
+		3BF1342C201339F20000759D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Commands::CommandsCore";
+			remoteInfo = CommandsCore;
+		};
+		3BF1342D201339F20000759D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Commands::CommandsCoreTests";
 			remoteInfo = CommandsCoreTests;
+		};
+		3BF1342E201339F20000759D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Commands::CommandsTests";
+			remoteInfo = CommandsTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -64,37 +86,45 @@
 		"Commands::Commands::Product" /* Commands */ = {isa = PBXFileReference; lastKnownFileType = text; path = Commands; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Commands::CommandsCore::Product" /* CommandsCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommandsCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Commands::CommandsCoreTests::Product" /* CommandsCoreTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = CommandsCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_10 /* CommandTextOutputStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandTextOutputStream.swift; sourceTree = "<group>"; };
+		"Commands::CommandsTests::Product" /* CommandsTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = CommandsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_10 /* CommandExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandExecutor.swift; sourceTree = "<group>"; };
 		OBJ_11 /* Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commands.swift; sourceTree = "<group>"; };
-		OBJ_12 /* StandardInputStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardInputStream.swift; sourceTree = "<group>"; };
-		OBJ_13 /* StandardOutOutputStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardOutOutputStream.swift; sourceTree = "<group>"; };
-		OBJ_15 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		OBJ_18 /* CommandExecutorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandExecutorTests.swift; sourceTree = "<group>"; };
-		OBJ_19 /* CommandTextOutputStreamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandTextOutputStreamTests.swift; sourceTree = "<group>"; };
-		OBJ_20 /* CommandsCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandsCoreTests.swift; sourceTree = "<group>"; };
+		OBJ_13 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		OBJ_16 /* CommandExecutorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandExecutorTests.swift; sourceTree = "<group>"; };
+		OBJ_17 /* CommandsCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandsCoreTests.swift; sourceTree = "<group>"; };
+		OBJ_18 /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
+		OBJ_20 /* CommandsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandsTests.swift; sourceTree = "<group>"; };
 		OBJ_21 /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		OBJ_9 /* CommandExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandExecutor.swift; sourceTree = "<group>"; };
+		OBJ_9 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		OBJ_38 /* Frameworks */ = {
+		OBJ_40 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_39 /* CommandsCore.framework in Frameworks */,
+				OBJ_41 /* CommandsCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_51 /* Frameworks */ = {
+		OBJ_54 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_52 /* CommandsCore.framework in Frameworks */,
+				OBJ_55 /* CommandsCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_63 /* Frameworks */ = {
+		OBJ_62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_63 /* CommandsCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_72 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
@@ -104,40 +134,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		OBJ_14 /* Commands */ = {
+		OBJ_12 /* Commands */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_15 /* main.swift */,
+				OBJ_13 /* main.swift */,
 			);
 			name = Commands;
 			path = Sources/Commands;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_16 /* Tests */ = {
+		OBJ_14 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_17 /* CommandsCoreTests */,
+				OBJ_15 /* CommandsCoreTests */,
+				OBJ_19 /* CommandsTests */,
 			);
 			name = Tests;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_17 /* CommandsCoreTests */ = {
+		OBJ_15 /* CommandsCoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_18 /* CommandExecutorTests.swift */,
-				OBJ_19 /* CommandTextOutputStreamTests.swift */,
-				OBJ_20 /* CommandsCoreTests.swift */,
-				OBJ_21 /* TestHelper.swift */,
+				OBJ_16 /* CommandExecutorTests.swift */,
+				OBJ_17 /* CommandsCoreTests.swift */,
+				OBJ_18 /* TestHelper.swift */,
 			);
 			name = CommandsCoreTests;
 			path = Tests/CommandsCoreTests;
 			sourceTree = SOURCE_ROOT;
 		};
+		OBJ_19 /* CommandsTests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_20 /* CommandsTests.swift */,
+				OBJ_21 /* TestHelper.swift */,
+			);
+			name = CommandsTests;
+			path = Tests/CommandsTests;
+			sourceTree = SOURCE_ROOT;
+		};
 		OBJ_22 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				"Commands::Commands::Product" /* Commands */,
+				"Commands::CommandsTests::Product" /* CommandsTests.xctest */,
 				"Commands::CommandsCoreTests::Product" /* CommandsCoreTests.xctest */,
+				"Commands::Commands::Product" /* Commands */,
 				"Commands::CommandsCore::Product" /* CommandsCore.framework */,
 			);
 			name = Products;
@@ -148,7 +189,7 @@
 			children = (
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
-				OBJ_16 /* Tests */,
+				OBJ_14 /* Tests */,
 				OBJ_22 /* Products */,
 			);
 			name = "";
@@ -158,7 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_8 /* CommandsCore */,
-				OBJ_14 /* Commands */,
+				OBJ_12 /* Commands */,
 			);
 			name = Sources;
 			sourceTree = SOURCE_ROOT;
@@ -166,11 +207,9 @@
 		OBJ_8 /* CommandsCore */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_9 /* CommandExecutor.swift */,
-				OBJ_10 /* CommandTextOutputStream.swift */,
+				OBJ_9 /* Command.swift */,
+				OBJ_10 /* CommandExecutor.swift */,
 				OBJ_11 /* Commands.swift */,
-				OBJ_12 /* StandardInputStream.swift */,
-				OBJ_13 /* StandardOutOutputStream.swift */,
 			);
 			name = CommandsCore;
 			path = Sources/CommandsCore;
@@ -181,15 +220,15 @@
 /* Begin PBXNativeTarget section */
 		"Commands::Commands" /* Commands */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_33 /* Build configuration list for PBXNativeTarget "Commands" */;
+			buildConfigurationList = OBJ_57 /* Build configuration list for PBXNativeTarget "Commands" */;
 			buildPhases = (
-				OBJ_36 /* Sources */,
-				OBJ_38 /* Frameworks */,
+				OBJ_60 /* Sources */,
+				OBJ_62 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_40 /* PBXTargetDependency */,
+				OBJ_64 /* PBXTargetDependency */,
 			);
 			name = Commands;
 			productName = Commands;
@@ -198,10 +237,10 @@
 		};
 		"Commands::CommandsCore" /* CommandsCore */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_54 /* Build configuration list for PBXNativeTarget "CommandsCore" */;
+			buildConfigurationList = OBJ_65 /* Build configuration list for PBXNativeTarget "CommandsCore" */;
 			buildPhases = (
-				OBJ_57 /* Sources */,
-				OBJ_63 /* Frameworks */,
+				OBJ_68 /* Sources */,
+				OBJ_72 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -214,26 +253,44 @@
 		};
 		"Commands::CommandsCoreTests" /* CommandsCoreTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_43 /* Build configuration list for PBXNativeTarget "CommandsCoreTests" */;
+			buildConfigurationList = OBJ_47 /* Build configuration list for PBXNativeTarget "CommandsCoreTests" */;
 			buildPhases = (
-				OBJ_46 /* Sources */,
-				OBJ_51 /* Frameworks */,
+				OBJ_50 /* Sources */,
+				OBJ_54 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_53 /* PBXTargetDependency */,
+				OBJ_56 /* PBXTargetDependency */,
 			);
 			name = CommandsCoreTests;
 			productName = CommandsCoreTests;
 			productReference = "Commands::CommandsCoreTests::Product" /* CommandsCoreTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		"Commands::CommandsTests" /* CommandsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_34 /* Build configuration list for PBXNativeTarget "CommandsTests" */;
+			buildPhases = (
+				OBJ_37 /* Sources */,
+				OBJ_40 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_42 /* PBXTargetDependency */,
+				OBJ_44 /* PBXTargetDependency */,
+			);
+			name = CommandsTests;
+			productName = CommandsTests;
+			productReference = "Commands::CommandsTests::Product" /* CommandsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		"Commands::SwiftPMPackageDescription" /* CommandsPackageDescription */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_27 /* Build configuration list for PBXNativeTarget "CommandsPackageDescription" */;
+			buildConfigurationList = OBJ_28 /* Build configuration list for PBXNativeTarget "CommandsPackageDescription" */;
 			buildPhases = (
-				OBJ_30 /* Sources */,
+				OBJ_31 /* Sources */,
 			);
 			buildRules = (
 			);
@@ -264,8 +321,9 @@
 			projectRoot = "";
 			targets = (
 				"Commands::SwiftPMPackageDescription" /* CommandsPackageDescription */,
-				"Commands::Commands" /* Commands */,
+				"Commands::CommandsTests" /* CommandsTests */,
 				"Commands::CommandsCoreTests" /* CommandsCoreTests */,
+				"Commands::Commands" /* Commands */,
 				"Commands::CommandsCore" /* CommandsCore */,
 				"Commands::CommandsPackageTests::ProductTarget" /* CommandsPackageTests */,
 			);
@@ -273,83 +331,95 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		OBJ_30 /* Sources */ = {
+		OBJ_31 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_31 /* Package.swift in Sources */,
+				OBJ_32 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_36 /* Sources */ = {
+		OBJ_37 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_37 /* main.swift in Sources */,
+				OBJ_38 /* CommandsTests.swift in Sources */,
+				OBJ_39 /* TestHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_46 /* Sources */ = {
+		OBJ_50 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_47 /* CommandExecutorTests.swift in Sources */,
-				OBJ_48 /* CommandTextOutputStreamTests.swift in Sources */,
-				OBJ_49 /* CommandsCoreTests.swift in Sources */,
-				OBJ_50 /* TestHelper.swift in Sources */,
+				OBJ_51 /* CommandExecutorTests.swift in Sources */,
+				OBJ_52 /* CommandsCoreTests.swift in Sources */,
+				OBJ_53 /* TestHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_57 /* Sources */ = {
+		OBJ_60 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_58 /* CommandExecutor.swift in Sources */,
-				OBJ_59 /* CommandTextOutputStream.swift in Sources */,
-				OBJ_60 /* Commands.swift in Sources */,
-				OBJ_61 /* StandardInputStream.swift in Sources */,
-				OBJ_62 /* StandardOutOutputStream.swift in Sources */,
+				OBJ_61 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_69 /* Command.swift in Sources */,
+				OBJ_70 /* CommandExecutor.swift in Sources */,
+				OBJ_71 /* Commands.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		OBJ_40 /* PBXTargetDependency */ = {
+		OBJ_42 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Commands::Commands" /* Commands */;
+			targetProxy = 3BF1342B201339F20000759D /* PBXContainerItemProxy */;
+		};
+		OBJ_44 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Commands::CommandsCore" /* CommandsCore */;
-			targetProxy = 3B6BCE371FE680260059C0BE /* PBXContainerItemProxy */;
+			targetProxy = 3BF1342C201339F20000759D /* PBXContainerItemProxy */;
 		};
-		OBJ_53 /* PBXTargetDependency */ = {
+		OBJ_56 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Commands::CommandsCore" /* CommandsCore */;
-			targetProxy = 3B6BCE381FE680260059C0BE /* PBXContainerItemProxy */;
+			targetProxy = 3BF1342A201339F20000759D /* PBXContainerItemProxy */;
 		};
-		OBJ_68 /* PBXTargetDependency */ = {
+		OBJ_64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Commands::CommandsCore" /* CommandsCore */;
+			targetProxy = 3BF13429201339F20000759D /* PBXContainerItemProxy */;
+		};
+		OBJ_77 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Commands::CommandsCoreTests" /* CommandsCoreTests */;
-			targetProxy = 3B6BCE391FE680260059C0BE /* PBXContainerItemProxy */;
+			targetProxy = 3BF1342D201339F20000759D /* PBXContainerItemProxy */;
+		};
+		OBJ_78 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Commands::CommandsTests" /* CommandsTests */;
+			targetProxy = 3BF1342E201339F20000759D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		OBJ_28 /* Debug */ = {
+		OBJ_29 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
-		};
-		OBJ_29 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
 		};
 		OBJ_3 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -373,41 +443,48 @@
 			};
 			name = Debug;
 		};
-		OBJ_34 /* Debug */ = {
+		OBJ_30 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		OBJ_35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Commands.xcodeproj/Commands_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
+				INFOPLIST_FILE = Commands.xcodeproj/CommandsTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
-				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
 				SWIFT_VERSION = 4.0;
-				TARGET_NAME = Commands;
+				TARGET_NAME = CommandsTests;
 			};
 			name = Debug;
 		};
-		OBJ_35 /* Release */ = {
+		OBJ_36 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Commands.xcodeproj/Commands_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
+				INFOPLIST_FILE = Commands.xcodeproj/CommandsTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
-				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
 				SWIFT_VERSION = 4.0;
-				TARGET_NAME = Commands;
+				TARGET_NAME = CommandsTests;
 			};
 			name = Release;
 		};
@@ -431,7 +508,7 @@
 			};
 			name = Release;
 		};
-		OBJ_44 /* Debug */ = {
+		OBJ_48 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -449,7 +526,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_45 /* Release */ = {
+		OBJ_49 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -467,57 +544,95 @@
 			};
 			name = Release;
 		};
-		OBJ_55 /* Debug */ = {
+		OBJ_58 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Commands.xcodeproj/CommandsCore_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				INFOPLIST_FILE = Commands.xcodeproj/Commands_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = CommandsCore;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
+				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
 				SWIFT_VERSION = 4.0;
-				TARGET_NAME = CommandsCore;
+				TARGET_NAME = Commands;
 			};
 			name = Debug;
 		};
-		OBJ_56 /* Release */ = {
+		OBJ_59 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Commands.xcodeproj/CommandsCore_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				INFOPLIST_FILE = Commands.xcodeproj/Commands_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = CommandsCore;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
+				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
 				SWIFT_VERSION = 4.0;
-				TARGET_NAME = CommandsCore;
+				TARGET_NAME = Commands;
 			};
 			name = Release;
 		};
 		OBJ_66 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Commands.xcodeproj/CommandsCore_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = CommandsCore;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = CommandsCore;
 			};
 			name = Debug;
 		};
 		OBJ_67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Commands.xcodeproj/CommandsCore_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = CommandsCore;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = CommandsCore;
+			};
+			name = Release;
+		};
+		OBJ_75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_76 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 			};
@@ -535,47 +650,56 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_27 /* Build configuration list for PBXNativeTarget "CommandsPackageDescription" */ = {
+		OBJ_28 /* Build configuration list for PBXNativeTarget "CommandsPackageDescription" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_28 /* Debug */,
-				OBJ_29 /* Release */,
+				OBJ_29 /* Debug */,
+				OBJ_30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_33 /* Build configuration list for PBXNativeTarget "Commands" */ = {
+		OBJ_34 /* Build configuration list for PBXNativeTarget "CommandsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_34 /* Debug */,
-				OBJ_35 /* Release */,
+				OBJ_35 /* Debug */,
+				OBJ_36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_43 /* Build configuration list for PBXNativeTarget "CommandsCoreTests" */ = {
+		OBJ_47 /* Build configuration list for PBXNativeTarget "CommandsCoreTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_44 /* Debug */,
-				OBJ_45 /* Release */,
+				OBJ_48 /* Debug */,
+				OBJ_49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_54 /* Build configuration list for PBXNativeTarget "CommandsCore" */ = {
+		OBJ_57 /* Build configuration list for PBXNativeTarget "Commands" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_55 /* Debug */,
-				OBJ_56 /* Release */,
+				OBJ_58 /* Debug */,
+				OBJ_59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_65 /* Build configuration list for PBXAggregateTarget "CommandsPackageTests" */ = {
+		OBJ_65 /* Build configuration list for PBXNativeTarget "CommandsCore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				OBJ_66 /* Debug */,
 				OBJ_67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_74 /* Build configuration list for PBXAggregateTarget "CommandsPackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_75 /* Debug */,
+				OBJ_76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

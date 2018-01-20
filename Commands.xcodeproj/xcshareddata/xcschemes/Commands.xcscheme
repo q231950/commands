@@ -40,6 +40,16 @@
                ReferencedContainer = "container:Commands.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "Commands::CommandsTests"
+               BuildableName = "CommandsTests.xctest"
+               BlueprintName = "CommandsTests"
+               ReferencedContainer = "container:Commands.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
