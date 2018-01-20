@@ -20,5 +20,7 @@ node {
         sh '/usr/local/bin/bundler exec trainer --path ./derived_data/Logs/Test'
 
         junit 'derived_data/Logs/Test/*.xml'
+
+        sh 'git clean -dfx'
     }
 }
