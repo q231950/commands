@@ -1,6 +1,5 @@
 node {
     stage("Clone") {
-        sh 'ls -la'
         checkout scm
     }
 
