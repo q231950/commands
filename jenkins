@@ -1,5 +1,6 @@
 node {
     stage("Clone") {
+        sh 'ls -la'
         checkout scm
     }
 
@@ -15,11 +16,8 @@ node {
     }
 
     stage("Collect results") {
-        sh 'pwd'
         sh '/usr/local/bin/bundler install --path vendor/bundle'
         sh '/usr/local/bin/bundler exec trainer --path ./derived_data/Logs/Test'
-
-        sh 'ls ./derived_data/Logs/Test/*.xml'
 
         junit 'derived_data/Logs/Test/*.xml'
     }
