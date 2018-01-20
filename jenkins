@@ -16,6 +16,6 @@ node {
 
     stage("Collect results") {
         sh 'pwd'
-        sh 'bundle install'
+        sh '/usr/local/bin/bundler install'
     }
 }
