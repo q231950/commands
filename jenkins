@@ -32,7 +32,7 @@ node {
         echo paths
         sh 'which swift'
         sh 'ls -la'
-        sh "./test-target-resolver.swift ${ paths }"
+        sh "swift ./test-target-resolver.swift ${ paths }"
     }
 
     stage("Test") {

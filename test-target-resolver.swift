@@ -9,5 +9,10 @@ func resolve(filePaths: String) -> String {
     return "CommandsTests"
 }
 
-let filePaths  = CommandLine.arguments[1]
-print(resolve(filePaths: filePaths))
+if let filePaths  = CommandLine.arguments[1] {
+    print(resolve(filePaths: filePaths))
+    exit(0)
+} else {
+    print("Nothing changed")
+    exit(1)
+}
