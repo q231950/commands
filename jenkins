@@ -11,14 +11,12 @@ node {
     }
 
     stage("Find Test Targets") {
-        sh 'git fetch'
         // find the file paths of the files which have changed. Compare the whole set of changes from this branch compared to the target branch
-        filePaths = sh(returnStdout: true, script: "git diff origin/${ env.CHANGE_TARGET } --no-commit-id --name-only -r").trim()
+        filePaths = sh(returnStdout: true, script: "git diff origin/${ env.CHANGE_TARGET } --no-commit-id --name-only").trim()
         echo filePaths
-
-        sh 'which swift'
-        sh 'ls -la'
-        sh "swift ./test-target-resolver.swift ${ filePaths }"
+        // throw the file paths into the resolver
+        changedFrameworks = sh(returnStdout: true, script: "./test-target-resolver.swift ${ filePaths }").trim()
+        //echo changedFrameworks
     }
 
     stage("Test") {
