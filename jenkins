@@ -14,7 +14,7 @@ node {
 
     stage("Test") {
         try {
-            sh "xcodebuild test-without-building -scheme 'Commands-Package' -configuration 'Debug' -derivedDataPath './derived_data'"
+            sh "xcodebuild test-without-building -scheme 'Commands-Package' -configuration 'Debug' -derivedDataPath './derived_data' -only-testing:CommandsTests"
         } catch (error) {
             echo 'test-without-building did not return with status 0'
             echo "${error}"
