@@ -7,7 +7,8 @@ import Foundation
 // @see https://developer.apple.com/library/content/technotes/tn2339/_index.html#//apple_ref/doc/uid/DTS40014588-CH1-PRODUCT
 func resolve(filePaths: String) -> String {
     //let paths = filePaths.split(separator: "\n")
-    return "-only-testing:CommandsTests -only-testing:CommandsCoreTests"
+    return "-only-testing:CommandsTests"
+    // return "-only-testing:CommandsTests -only-testing:CommandsCoreTests"
 }
 
 let args = CommandLine.arguments
