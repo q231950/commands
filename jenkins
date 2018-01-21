@@ -1,6 +1,8 @@
 node {
     stage("Clone") {
         checkout scm
+
+        env
     }
 
     stage("Build") {
@@ -11,15 +13,23 @@ node {
     }
 
     stage("Test") {
-        sh "xcodebuild test-without-building -scheme 'Commands-Package' -configuration 'Debug' -derivedDataPath './derived_data'"
+        try {
+            sh "xcodebuild test-without-building -scheme 'Commands-Package' -configuration 'Debug' -derivedDataPath './derived_data'"
+        } catch (error) {
+            echo 'test-without-building did not return with status 0'
+            echo "${error}"
+        } finally {
+            echo 'Run Trainer'
+            sh '/usr/local/bin/bundler install --path vendor/bundle'
+            sh '/usr/local/bin/bundler exec trainer --path ./derived_data/Logs/Test'
+        }
     }
 
     stage("Collect results") {
-        sh '/usr/local/bin/bundler install --path vendor/bundle'
-        sh '/usr/local/bin/bundler exec trainer --path ./derived_data/Logs/Test'
-
         junit 'derived_data/Logs/Test/*.xml'
+    }
 
+    stage("CLeanup") {
         sh 'git clean -dfx derived_data/Logs'
     }
 }
