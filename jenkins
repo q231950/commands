@@ -2,7 +2,7 @@ node {
     stage("Clone") {
         checkout scm
 
-        env
+        sh 'env'
     }
 
     stage("Build") {
@@ -10,6 +10,10 @@ node {
         sh 'swift package generate-xcodeproj'
 
         sh "xcodebuild build-for-testing -scheme 'Commands-Package' -configuration 'Debug' -derivedDataPath './derived_data'"
+    }
+
+    stage("Find Test Targets") {
+
     }
 
     stage("Test") {
