@@ -26,6 +26,6 @@ class CommandsCoreTests: XCTestCase {
     func testForwardArguments() {
         let arguments = ["a", "b", "c"]
         let commands = Commands(arguments: arguments)
-        XCTAssertEqual(commands.forwardArguments(), ["b"])
+        XCTAssertEqual(commands.forwardArguments(), ["c"])
     }
 }
