@@ -14,14 +14,19 @@ node {
         // find the file paths of the files which have changed. Compare the whole set of changes from this branch compared to the target branch
         filePaths = sh(returnStdout: true, script: "git diff origin/${ env.CHANGE_TARGET } --no-commit-id --name-only").trim()
         echo filePaths
-        // throw the file paths into the resolver
-        changedFrameworks = sh(returnStdout: true, script: "./test-target-resolver.swift ${ filePaths }").trim()
-        //echo changedFrameworks
+        
+        try {
+            // Create the list of changed frameworks by throwing the file paths into the resolver
+            changedFrameworks = sh(returnStdout: true, script: "./test-target-resolver.swift ${ filePaths }").trim()
+        } catch (error) {
+            echo "This should not be an error: ${ error }"
+        } finally {
+        }
     }
 
     stage("Test") {
         try {
-            sh "xcodebuild test-without-building -scheme 'Commands-Package' -configuration 'Debug' -derivedDataPath './derived_data' -only-testing:CommandsTests"
+            sh "xcodebuild test-without-building -scheme 'Commands-Package' -configuration 'Debug' -derivedDataPath './derived_data' ${ changedFrameworks }"
         } catch (error) {
             echo 'test-without-building did not return with status 0'
             echo "${error}"
