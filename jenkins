@@ -27,8 +27,9 @@ node {
                 }
             }
         }
-        
-        sh "./test-target-resolver.swift ${ filePaths.join(",") }"
+
+        echo filePaths
+        // sh "./test-target-resolver.swift ${ filePaths.join(",") }"
     }
 
     stage("Test") {
