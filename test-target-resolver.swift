@@ -6,20 +6,16 @@ import Foundation
 // @return a list of targets required for xcodebuild's -only-testing parameter
 // @see https://developer.apple.com/library/content/technotes/tn2339/_index.html#//apple_ref/doc/uid/DTS40014588-CH1-PRODUCT
 func resolve(filePaths: String) -> String {
-    let paths = filePaths.split(separator: "\n")
+    //let paths = filePaths.split(separator: "\n")
     return "CommandsTests"
 }
 
 let args = CommandLine.arguments
 
 if args.count > 1 {
-    print("Resolving...")
     print(resolve(filePaths: args[1]))
-    print("Done resolving.")
     exit(0)
 } else {
     print("Nothing changed")
-    exit(1)
+    exit(123)
 }
-
-print("should never reach here")
