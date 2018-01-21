@@ -28,8 +28,11 @@ node {
             }
         }
 
-        echo filePaths
-        // sh "./test-target-resolver.swift ${ filePaths.join(",") }"
+        def paths = filePaths.join(",")
+        echo paths
+        sh 'which swift'
+        sh 'ls -la'
+        sh "./test-target-resolver.swift ${ paths }"
     }
 
     stage("Test") {
