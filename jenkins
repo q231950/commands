@@ -23,7 +23,7 @@ node {
                 for (int k = 0; k < files.size(); k++) {
                     def file = files[k]
                     echo "changeSets:  ${file.editType.name} ${file.path}"
-                    filePaths << file.path
+                    filePaths.add(file.path)
                 }
             }
         }
