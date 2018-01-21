@@ -11,28 +11,14 @@ node {
     }
 
     stage("Find Test Targets") {
-        // find the file paths of the files which have changed with this commit?? should be all files in this pr!
-        def filePaths = []
-        def changeLogSets = currentBuild.changeSets
-        for (int i = 0; i < changeLogSets.size(); i++) {
-            def entries = changeLogSets[i].items
-            for (int j = 0; j < entries.length; j++) {
-                def entry = entries[j]
-                echo "${entry.commitId} by ${entry.author} on ${new Date(entry.timestamp)}: ${entry.msg}"
-                def files = new ArrayList(entry.affectedFiles)
-                for (int k = 0; k < files.size(); k++) {
-                    def file = files[k]
-                    echo "changeSets:  ${file.editType.name} ${file.path}"
-                    filePaths.add(file.path)
-                }
-            }
-        }
+        sh 'git fetch'
+        // find the file paths of the files which have changed. Compare the whole set of changes from this branch compared to the target branch
+        filePaths = sh(returnStdout: true, script: 'git diff jenkins-test-results --no-commit-id --name-only -r').trim()
+        echo filePaths
 
-        String paths = filePaths.join(",")
-        echo paths
         sh 'which swift'
         sh 'ls -la'
-        sh "swift ./test-target-resolver.swift ${ paths }"
+        sh "swift ./test-target-resolver.swift ${ filePaths }"
     }
 
     stage("Test") {
