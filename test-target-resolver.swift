@@ -14,7 +14,9 @@ func resolve(filePaths: String) -> String {
 let args = CommandLine.arguments
 
 if args.count > 1 {
+    print("Resolving...")
     print(resolve(filePaths: args[1]))
+    print("Done resolving.")
     exit(0)
 } else {
     print("Nothing changed")

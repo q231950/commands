@@ -13,7 +13,7 @@ node {
     stage("Find Test Targets") {
         sh 'git fetch'
         // find the file paths of the files which have changed. Compare the whole set of changes from this branch compared to the target branch
-        filePaths = sh(returnStdout: true, script: 'git diff origin/jenkins-test-results --no-commit-id --name-only -r').trim()
+        filePaths = sh(returnStdout: true, script: "git diff origin/${ env.CHANGE_TARGET } --no-commit-id --name-only -r").trim()
         echo filePaths
 
         sh 'which swift'
