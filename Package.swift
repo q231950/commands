@@ -14,6 +14,9 @@ let package = Package(
         .target(
             name: "Commands",
             dependencies: ["CommandsCore"]),
+        .testTarget(
+            name: "CommandsTests",
+            dependencies: ["Commands"]),
         .target(
             name: "CommandsCore",
             dependencies: []),

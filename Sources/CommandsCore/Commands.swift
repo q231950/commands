@@ -15,17 +15,20 @@ public final class Commands {
         let launchPath = arguments[1]
         let command = Command(launchPath: launchPath, arguments: forwardArguments())
         let commandExecutor = CommandExecutor()
+        commandExecutor.exitHandler = { _ in
+            return
+        }
         commandExecutor.outputHandler = { text in
             print(text)
         }
 
-        DispatchQueue.global(qos: .background).async {
-            commandExecutor.execute(command)
+        DispatchQueue.global(qos: .userInitiated).async {
+            while let x = readLine() {
+                commandExecutor.write(input: x)
+            }
         }
 
-        while let x = readLine() {
-            commandExecutor.write(input: x)
-        }
+        commandExecutor.execute(command)
     }
 
     internal func forwardArguments() -> [String] {

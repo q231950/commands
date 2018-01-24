@@ -11,6 +11,7 @@ public class CommandExecutor {
 
     public
     var outputHandler: ((String) -> ())?
+    var exitHandler: ((Int32) -> ())?
     
     private
     let inputPipe = Pipe()
@@ -25,6 +26,9 @@ public class CommandExecutor {
         process.standardError = pipe
 
         process.standardInput = inputPipe
+        process.terminationHandler = { process in
+            self.exitHandler?(process.terminationStatus)
+        }
 
         process.launch()
         process.waitUntilExit()

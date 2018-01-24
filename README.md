@@ -6,6 +6,10 @@
 
 `swift package generate-xcodeproj`
 
+Open the project and run the Commands target. The target is configured to run an example with the Interactive Ruby Shell (IRB).
+
+![Example console output](Docs/example.png)
+
 ## Test
 
 `swift test`
