@@ -10,8 +10,11 @@ import Foundation
 public class CommandExecutor {
 
     public
+    // the outputHandler is called with the output of a command
     var outputHandler: ((String) -> ())?
-    var exitHandler: ((Int32) -> ())?
+
+    // the terminationHandler is called upon termination and informs about the termination status
+    var terminationHandler: ((Int32) -> ())?
     
     private
     let inputPipe = Pipe()
@@ -27,7 +30,7 @@ public class CommandExecutor {
 
         process.standardInput = inputPipe
         process.terminationHandler = { process in
-            self.exitHandler?(process.terminationStatus)
+            self.terminationHandler?(process.terminationStatus)
         }
 
         process.launch()
