@@ -1,7 +1,6 @@
 node {
     stage("Clone") {
         checkout scm
-
         env
     }
 
