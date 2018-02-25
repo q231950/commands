@@ -44,7 +44,7 @@ $ open Commands.xcodeproj
 
 ![Setting the launch path](Docs/setting-the-launch-path.png)
 
-The target is now configured to run an example with the Interactive Ruby Shell (IRB) to be launched. Select _My Mac_ as target and hit the run button.
+The target is now configured to run an example with the Interactive Ruby Shell (IRB) to be launched. Select the _Commands_ scheme and _My Mac_ as target and hit the run button.
 
 ![Example console output](Docs/example.png)
 
