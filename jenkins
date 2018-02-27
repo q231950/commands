@@ -1,13 +1,34 @@
 node {
     stage("Clone") {
         checkout scm
+        env
     }
 
     stage("Build") {
         sh 'swift build'
+        sh 'swift package generate-xcodeproj'
+
+        sh "xcodebuild build-for-testing -scheme 'Commands-Package' -configuration 'Debug' -derivedDataPath './derived_data'"
     }
 
     stage("Test") {
-        sh 'swift test'
+        try {
+            sh "xcodebuild test-without-building -scheme 'Commands-Package' -configuration 'Debug' -derivedDataPath './derived_data'"
+        } catch (error) {
+            echo 'test-without-building did not return with status 0'
+            echo "${error}"
+        } finally {
+            echo 'Run Trainer'
+            sh '/usr/local/bin/bundler install --path vendor/bundle'
+            sh '/usr/local/bin/bundler exec trainer --path ./derived_data/Logs/Test'
+        }
+    }
+
+    stage("Collect results") {
+        junit 'derived_data/Logs/Test/*.xml'
+    }
+
+    stage("CLeanup") {
+        sh 'git clean -dfx derived_data/Logs'
     }
 }
