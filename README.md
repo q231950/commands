@@ -29,7 +29,7 @@ exit
 
 ### Xcode
 
-**It's more funto do it within Xcode though:**
+**It's more fun to do it within Xcode though:**
 
 ```bash
 $ swift package generate-xcodeproj
