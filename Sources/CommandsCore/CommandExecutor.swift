@@ -9,6 +9,8 @@ import Foundation
 
 public class CommandExecutor {
 
+    public init() {}
+
     public
     // the outputHandler is called with the output of a command
     var outputHandler: ((String) -> ())?
@@ -21,7 +23,14 @@ public class CommandExecutor {
     let process = Process()
 
     public func execute(_ command: Command) {
-        process.launchPath = command.launchPath
+
+        if #available(OSX 10.13, *) {
+            let url = URL(fileURLWithPath: command.launchPath)
+            process.executableURL = url
+        } else {
+            process.launchPath = command.launchPath
+        }
+
         process.arguments = command.arguments
 
         let pipe = outputStreamWritingPipe()
@@ -33,7 +42,16 @@ public class CommandExecutor {
             self.terminationHandler?(process.terminationStatus)
         }
 
-        process.launch()
+        do {
+            if #available(OSX 10.13, *) {
+                try process.run()
+            } else {
+                process.launch()
+            }
+        } catch let error {
+            print("\(error.localizedDescription)")
+        }
+
         process.waitUntilExit()
     }
 
