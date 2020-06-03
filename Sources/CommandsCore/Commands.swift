@@ -23,8 +23,8 @@ public final class Commands {
         }
 
         DispatchQueue.global(qos: .userInitiated).async {
-            while let x = readLine() {
-                commandExecutor.write(input: x)
+            while let input = readLine() {
+                commandExecutor.write(input: input)
             }
         }
 
