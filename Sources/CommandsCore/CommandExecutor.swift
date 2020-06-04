@@ -11,16 +11,14 @@ public class CommandExecutor {
 
     public init() {}
 
-    public
     // the outputHandler is called with the output of a command
-    var outputHandler: ((String) -> ())?
+    public var outputHandler: ((String) -> ())?
 
     // the terminationHandler is called upon termination and informs about the termination status
-    var terminationHandler: ((Int32) -> ())?
+    public var terminationHandler: ((Int32) -> ())?
     
-    private
-    let inputPipe = Pipe()
-    let process = Process()
+    private let inputPipe = Pipe()
+    private let process = Process()
 
     public func execute(_ command: Command) {
 
