@@ -7,6 +7,7 @@
 As a Swift Package:
 
 ```swift
+.package(url: "git@github.com:q231950/commands.git", from: "2.0.0")
 ```
 
 ## Usage
