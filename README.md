@@ -1,52 +1,46 @@
 # Commands
 
-**Commands** allows you to execute commands from within your application or via the command line tool **Commands** 
+> **Commands** allows you to execute commands from within your application and capture their output and exit codes. 
 
-## Development
+## Install
 
-### Command line
+As a Swift Package:
 
-**You can build and run an example from the command line:**
-
-```bash
-$ swift build
-Compile Swift Module 'CommandsCore' (3 sources)
-Compile Swift Module 'Commands' (1 sources)
-Linking ./.build/x86_64-apple-macosx10.10/debug/Commands
-$ ./.build/x86_64-apple-macosx10.10/debug/Commands '/usr/bin/irb'
-Switch to inspect mode.
-
->> 
-1+1
-1+1
-
-=> 2
-
->> 
-exit
-exit
+```swift
 ```
 
-### Xcode
+## Usage
 
-**It's more fun to do it within Xcode though:**
-
-```bash
-$ swift package generate-xcodeproj
-generated: ./Commands.xcodeproj
-```
-
-Open the project add a launch argument to the **Commands** target's run phase.
+You can build and run an example from the command line or by running the _CommandsExample_ target in Xcode. The example utilizes **Commands** to print some date and time.
 
 ```bash
-$ open Commands.xcodeproj
+kim@mbp commands % swift run
+Building for debugging...
+Build complete! (0.15s)
+output:
+DATE: 2022-03-19
+TIME: 19:44:28
+
+exit code: 0
 ```
 
-![Setting the launch path](Docs/setting-the-launch-path.png)
+The _DATE/TIME_ text is output of the command that you can find in [main.swift](https://github.com/q231950/commands/blob/main/Sources/CommandsExample/main.swift#L8-L29) of the _CommandsExample_ target. It is described in more detail there, but here is the shortened essence of that code. This is also how you can execute commands and capture their output and exit codes from within your code:
 
-The target is now configured to run an example with the Interactive Ruby Shell (IRB) to be launched. Select the _Commands_ scheme and _My Mac_ as target and hit the run button.
+```swift
+let command = Command(launchPath: "/bin/date", arguments: ["+%nDATE: %Y-%m-%d%nTIME: %H:%M:%S"])
 
-![Example console output](Docs/example.png)
+let commandExecutor = CommandExecutor()
+
+commandExecutor.outputHandler = { text in
+    print("output: \(text)")
+}
+
+commandExecutor.terminationHandler = { code in
+    print("exit code: \(code)")
+}
+
+commandExecutor.execute(command)
+```
 
 ## Test
 
