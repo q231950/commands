@@ -6,22 +6,20 @@ import PackageDescription
 let package = Package(
     name: "Commands",
     products: [
+        .executable(name: "CommandsExample", targets: ["CommandsExample"]),
         .library(name: "Commands", targets: ["Commands"]),
-        .library(name: "CommandsCore", targets: ["CommandsCore"]),
     ],
     dependencies: [],
     targets: [
         .target(
-            name: "Commands",
-            dependencies: ["CommandsCore"]),
-        .testTarget(
-            name: "CommandsTests",
+            name: "CommandsExample",
             dependencies: ["Commands"]),
         .target(
-            name: "CommandsCore",
+            name: "Commands",
             dependencies: []),
         .testTarget(
-             name: "CommandsCoreTests",
-             dependencies: ["CommandsCore"])
+             name: "CommandsTests",
+             dependencies: ["Commands"],
+             exclude: ["Fixtures/Script.sh"])
     ]
 )

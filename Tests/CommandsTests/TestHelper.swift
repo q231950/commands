@@ -1,6 +1,6 @@
 //
 //  TestHelper.swift
-//  CommandsCoreTests
+//  CommandsTests
 //
 //  Created by Martin Kim Dung-Pham on 17.10.17.
 //

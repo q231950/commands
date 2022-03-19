@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import CommandsCore
+@testable import Commands
 
 class CommandExecutorTests: XCTestCase {
 
@@ -41,10 +41,10 @@ class CommandExecutorTests: XCTestCase {
     func testOutput() {
         let expectation = self.expectation(description: "script done")
 
-        if let scriptPath = "echo 'resillient koala' && exit".makeScript(named: "OutputTestScript") {
+        if let scriptPath = "echo 'resilient koala' && exit".makeScript(named: "OutputTestScript") {
             let commandExecutor = CommandExecutor()
             commandExecutor.outputHandler = { text in
-                XCTAssertEqual(text, "resillient koala\n")
+                XCTAssertEqual(text, "resilient koala\n")
             }
             commandExecutor.terminationHandler = { _ in
                 expectation.fulfill()
